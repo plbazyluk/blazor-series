@@ -1,3 +1,9 @@
 ﻿@page "/"
+@inject NavigationManager Nav
 
 <PageTitle>Home</PageTitle>
+
+<button class="btn btn-sm btn-primary"
+        @onclick="@(() => Nav.NavigateTo("wrappingforeach"))">
+    Examples > Wrapping Foreach
+</button>

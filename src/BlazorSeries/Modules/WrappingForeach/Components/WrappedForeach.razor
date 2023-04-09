@@ -1,0 +1,13 @@
+﻿<h5>Wrapped Foreach</h5>
+
+<GenericList Source="_source">
+    <div style="border: 3px solid black; margin: 5px 0; padding: 5px;">
+        <div id="username-@context.Id">@context.FirstName @context.LastName</div>
+        <div id="userid-@context.Id">@context.Id</div>
+        <div id="userregistration-@context.RegistrationUtc">@context.RegistrationUtc</div>
+    </div>
+</GenericList>
+
+@code {
+    private readonly List<User> _source = User.Source;
+}
