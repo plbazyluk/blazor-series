@@ -1,6 +1,6 @@
 ﻿@typeparam T
 
-<div style="display: flex; gap: 5px;">
+<div class="grid">
     @foreach (var item in Source)
     {
         @ChildContent(item)
@@ -8,6 +8,9 @@
 </div>
 
 @code {
-    [Parameter, EditorRequired] public List<T> Source { get; set; } = default!;
-    [Parameter, EditorRequired] public RenderFragment<T> ChildContent { get; set; } = default!;
+    [Parameter, EditorRequired]
+    public List<T> Source { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public RenderFragment<T> ChildContent { get; set; } = default!;
 }

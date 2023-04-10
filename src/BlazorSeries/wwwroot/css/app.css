@@ -99,3 +99,14 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+.grid {
+    display: flex;
+    gap: 5px;
+}
+
+    .grid .box {
+        border: 3px solid black;
+        margin: 5px 0;
+        padding: 5px;
+    }
