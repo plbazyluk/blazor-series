@@ -1,0 +1,22 @@
+﻿<div>
+    <label>In component</label>
+</div>
+<div>
+    <label>@UserName</label>
+    <button @onclick=Rename>
+        Rename
+    </button>
+</div>
+
+@code {
+    [Parameter]
+    public string UserName { get; set; } = "Who am I?";
+
+    [Parameter]
+    public EventCallback<string> UserNameChanged { get; set; }
+
+    private string _new = "Jane Doe";
+
+    private async Task Rename()
+        => await UserNameChanged.InvokeAsync(_new);
+}

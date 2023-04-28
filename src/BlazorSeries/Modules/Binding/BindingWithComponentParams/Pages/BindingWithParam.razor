@@ -1,0 +1,16 @@
+﻿@page "/bindingwparam"
+
+<h3>BindingWithParam</h3>
+
+<div>
+    <label>On parent page</label>
+</div>
+<div>
+    <label>@UserName</label>
+</div>
+
+<WithBindableParams @bind-UserName=@UserName />
+
+@code {
+    public string UserName = "John Doe";
+}
