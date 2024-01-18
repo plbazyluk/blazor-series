@@ -1,0 +1,21 @@
+﻿@inherits OwningComponentBase
+@inject IApplicationState State
+
+@if (string.IsNullOrWhiteSpace(State.Status))
+    return;
+
+<div>@State.Status</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        State.Observer += Refresh;
+    }
+
+    public void Dispose()
+    {
+        State.Observer -= Refresh;
+    }
+
+    private void Refresh() => StateHasChanged();
+}
